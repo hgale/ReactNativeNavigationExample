@@ -2,25 +2,57 @@
 
 TODO:
 
-1) Describe what this app is (i.e a more advanced react native application).
-2) Add description of technologies used (Redux/React Native Navigation).
-3) Add list of capabilities of this app.
-4) Add animated gif demoing app.
-5) Get this example working for Android.
+- Describe what this app is (i.e a more advanced react native application).
+- Add description of technologies used (Redux/React Native Navigation).
+- Add list of capabilities of this app.
+- Add animated gif demoing app.
+- Get this example working for Android.
 
 ## Design Principles
 
 This example app was designed based on the following ideas:
 
-1) Organize app by feature (usually corresponds to a screen)
-2) Enforce strict module boundaries
-3) To avoid cyclic (circular) dependencies. See https://stackoverflow.com/questions/29807664/cyclic-dependency-returns-empty-object-in-react-native
+- Organize app by feature (usually corresponds to a screen).
+- Enforce strict module boundaries.
+- To avoid cyclic (circular) dependencies. See. https://stackoverflow.com/questions/29807664/cyclic-dependency-returns-empty-object-in-react-native
 
 A new feature request likely constitute a new folder in the “features” directory. i.e a camera screen, etc.
 
 ## What Is A Feature?
 
-A feature is a discrete user-facing experience with a clear business case and design. A feature usually will correspond with a screen. These are organized under the “features” directory. This example includes the following:
+A feature is a discrete user-facing experience with a clear business case and design. A feature usually will correspond with a screen. If feature specific shared state is necessary the top-level feature directory should handle mapping to it's own distinct part of the redux state. Some features might have many sub-features.
+
+The rules for a feature are as follow:
+
+- A feature should never import or depend on another feature (sub-features are
+  ok). If you need some functionality spread across multiple features, it
+  should go in "shared" or "microcomponents".  The idea is that if a feature
+  directory and any corresponding routes where to simply be deleted, the app
+  should still function.
+- A feature should only rely on it's own section of the redux state, and
+  sections of the redux state inside of "shared".
+- Any feature that is a screen should have it's name be suffixed with "Screen".
+- Features should have the following basic structure:
+  - index.js - The container component.
+  - component.js - The main presentational component.
+  - styles.js - Any styles that pertain to this feature's presentational
+    components.
+  - reducer.js - The reducer for this feature's section of the redux state.
+  - selectors.js - Selectors used to help access the redux state (used in mapStateToProps).
+  - actions.js - Action creators for this feature's section of the redux state.
+  - actionTypes.js - The action types to be consumed by both action creators
+    and the reducer.
+- Features may have the following optional structures:
+  - component file - a file containing a presentational sub-component.
+  - component directory - a presentational sub component contained in a directory.
+  - sub-feature directory - a directory containing a sub feature
+  - utils.js - a file containing helper functions shared among this features
+    components.
+- Feature names should be capitalized since they are components.
+
+## Features In This Example
+
+These are organized under the “features” directory. This example includes the following:
 
 1) Counter: A screen that displays a button and a counter. Tapping the button increments the counter.
 2) Entry-screen: Displays the screen the user first sees when entering the app. i.e this could be a user on boarding screen. Allow the suer to navigate
