@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import React from 'react'
 
-import { login, setupGoogleSignin } from '../../shared/user/actions'
+import { login, setupGoogleSignin, logout } from '../../shared/user/actions'
 import { isLoggedIn, getName, getPhoto, getEmail } from '../../shared/user/selectors'
 
 import Login from './component'
+import Profile from './profile'
 
 const mapStateToProps = (state, props) => {
   return {
@@ -18,6 +19,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch, props) => {
   return {
     login: () => dispatch(login()),
+    logout: () => dispatch(logout()),
     setupGoogleSignin: () => { setupGoogleSignin() }
   }
 }
@@ -28,9 +30,16 @@ class LoginContainer extends React.Component {
   }
 
   render () {
-    return (
-      <Login signIn={this.props.login}/>
-    )
+    const { isLoggedIn } = this.props
+    if (isLoggedIn) {
+      return (
+        <Profile {...this.props}/>
+      )
+    } else {
+      return (
+        <Login signIn={this.props.login}/>
+      )
+    }
   }
 }
 

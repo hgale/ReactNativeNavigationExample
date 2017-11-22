@@ -48,11 +48,8 @@ export async function setupGoogleSignin() {
 /**
  * Login
  */
- //async
 export function login () {
-  console.log('Login entered!!!');
   return (dispatch) => {
-  console.log('Call requuest entered!!!');
     dispatch(requestUser())
 
     GoogleSignin.signIn()
@@ -73,10 +70,10 @@ export function login () {
  */
 export function logout () {
   return (dispatch) => {
+    dispatch({
+      type: t.LOGOUT
+    })
     GoogleSignin.revokeAccess().then(() => GoogleSignin.signOut()).then(() => {
-      dispatch({
-        type: t.LOGOUT
-      })
     })
     .done()
   }

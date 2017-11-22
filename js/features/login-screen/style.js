@@ -13,10 +13,17 @@ export default StyleSheet.create({
     backgroundColor: 'red'
   },
   textSub: {
-    margin: 5 
+    margin: 5
   },
   text: {
     textAlign: 'center',
     color: 'white'
+  },
+  profileText:{
+    marginTop: 20
+  },
+  profileImage: {
+    height:90,
+    width:90
   }
 })
