@@ -1,0 +1,5 @@
+export default {
+  REQUEST_USER: 'REQUEST_USER',
+  LOGOUT: 'LOGOUT',
+  UPDATE_USER: 'UPDATE_USER'
+}
