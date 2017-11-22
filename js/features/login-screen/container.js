@@ -1,72 +1,37 @@
 import { connect } from 'react-redux'
 import React from 'react'
-import { initializeApp } from '../../shared/app/actions'
-import { navTypes, REVERSED_CLIENT_ID } from '../../shared/const'
-import { pages } from '../../navigation/pages'
-import { getNavScreen } from '../../utils'
-import Login from './component'
 
-import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+import { login, setupGoogleSignin } from '../../shared/user/actions'
+import { isLoggedIn, getName, getPhoto, getEmail } from '../../shared/user/selectors'
+
+import Login from './component'
 
 const mapStateToProps = (state, props) => {
   return {
+    photo: getPhoto(state, props),
+    name: getName(state, props),
+    email: getEmail(state, props),
+    isLoggedIn: isLoggedIn(state, props)
   }
 }
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    login: () => dispatch(login()),
+    setupGoogleSignin: () => { setupGoogleSignin() }
   }
 }
 
 class LoginContainer extends React.Component {
-
   componentDidMount() {
-    this.setupGoogleSignin()
+    this.props.setupGoogleSignin()
   }
 
   render () {
     return (
-      <Login signIn={this.signIn.bind(this)}/>
+      <Login signIn={this.props.login}/>
     )
   }
-
-  async setupGoogleSignin() {
-    try {
-      await GoogleSignin.hasPlayServices({ autoResolve: true });
-      await GoogleSignin.configure({
-        iosClientId: REVERSED_CLIENT_ID,
-        webClientId: REVERSED_CLIENT_ID,
-        offlineAccess: false
-      });
-
-      const user = await GoogleSignin.currentUserAsync();
-      console.log(user);
-      this.setState({user});
-    }
-    catch(err) {
-      console.log("Google signin error", err.code, err.message);
-    }
-  }
-
-  signIn() {
-    GoogleSignin.signIn()
-    .then((user) => {
-      console.log(user);
-      this.setState({user: user});
-    })
-    .catch((err) => {
-      console.log('WRONG SIGNIN', err);
-    })
-    .done()
-  }
-
-  signOut() {
-    GoogleSignin.revokeAccess().then(() => GoogleSignin.signOut()).then(() => {
-      this.setState({user: null});
-    })
-    .done()
-  }
-
 }
 
 // Instantiate and make the magic happen
