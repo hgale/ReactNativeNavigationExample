@@ -102,7 +102,10 @@ If the feature makes changes to the redux store, it does so via actions and redu
 
 ### Selectors
 
-These live in the selectors top-level directory and are in a single file. These are used for querying the state of a module and can be accessed anywhere.
+Selectors live in the directory adjacent to the reducer they correspond to and are in a single file (selector.js). These are used for querying the state of a module and can be accessed anywhere. i.e shared/user/reducer.js has a corresponding shared/user/selector.js file which is responsible for querying the user object stored in redux.
+
+If a feature had a reducer that was complex enough to warrant a selector, it to would live in the corresponding feature sub directory. i.e features/foo/reducer.js features/foo/selector.js
+
 
 ### TOP-LEVEL “SHARED” DIRECTORY
 
