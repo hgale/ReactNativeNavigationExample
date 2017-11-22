@@ -9,7 +9,7 @@
 	"dependencies": {
 		"is-empty-object": "^1.1.1",
 		"react": "16.0.0-beta.5",
-		"react-native": "0.49.3",
+		"react-native": "0.50",
 		"react-native-google-signin": "^0.12.0",
 		"react-native-navigation": "^1.1.229",
 		"react-redux": "^5.0.6",
