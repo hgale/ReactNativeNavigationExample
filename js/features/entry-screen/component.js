@@ -6,7 +6,7 @@ import style from './style'
 
 class Entry extends React.Component {
   render () {
-    const { goToCounter, goToTab, name } = this.props
+    const { goToCounter, goToTab, goToLogin, name } = this.props
     return (
       <View style={style.container}>
         <Text>{name}</Text>
@@ -17,6 +17,9 @@ class Entry extends React.Component {
         <TouchableOpacity onPress={goToTab} style={style.textView}>
           <Text style={style.text}>Go to tab screen</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={goToLogin} style={style.textView}>
+          <Text style={style.text}>Go to login screen</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -26,6 +29,7 @@ Entry.propTypes = {
   name: PropTypes.string.isRequired,
   goToCounter: PropTypes.func.isRequired,
   goToTab: PropTypes.func.isRequired,
+  goToLogin: PropTypes.func.isRequired
 }
 
 export default Entry

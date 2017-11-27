@@ -28,9 +28,17 @@ class EntryContainer extends React.Component {
     this.props.goToTabs()
   }
 
+  goToLogin = () => {
+    this.props.navigator.push(getNavScreen(pages.LOGIN))
+  }
+
   render () {
     return (
-      <Entry name={this.props.name} goToCounter={this.goToCounter} goToTab={this.goToTabs}/>
+      <Entry
+        name={this.props.name}
+        goToCounter={this.goToCounter}
+        goToTab={this.goToTabs}
+        goToLogin={this.goToLogin} />
     )
   }
 }
