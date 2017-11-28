@@ -9,11 +9,15 @@ import RehydrationServices from '../services/RehydrationServices'
 import colorScreen from '../features/color-screen/reducers'
 import counter from '../features/counter/reducer'
 import app from '../shared/app/reducers'
+import loading from '../shared/app/loading/reducers'
+import error from '../shared/error/reducers'
 import user from '../shared/user/reducers'
 
 
 const appReducer = combineReducers({
   app,
+  error,
+  loading,
   user,
   colorScreen,
   counter
