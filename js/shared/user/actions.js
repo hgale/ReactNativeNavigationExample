@@ -2,6 +2,7 @@ import { GoogleSignin } from 'react-native-google-signin'
 
 import { showErrorMessage } from '../error/actions'
 import { REVERSED_CLIENT_ID } from '../../shared/const'
+import { loginLoading, loginLoaded } from '../../shared/app/loading/actions'
 import t from './actionTypes'
 
 /**
@@ -9,8 +10,6 @@ import t from './actionTypes'
  */
 function requestUser () {
   return (dispatch) => {
-    // TODO: implement actions/etc to  Display loading indicator
-    //dispatch(userLoading())
     dispatch({
       type: t.REQUEST_USER
     })
@@ -22,8 +21,6 @@ function requestUser () {
  */
 function updateUser (user) {
   return (dispatch) => {
-    // Display loading
-    //dispatch(userLoading())
     dispatch({
       type: t.UPDATE_USER,
       user
@@ -41,7 +38,6 @@ export async function setupGoogleSignin() {
     });
   }
   catch(err) {
-    // TODO:
     console.log("Google signin error", err.code, err.message);
   }
 }
@@ -52,13 +48,15 @@ export async function setupGoogleSignin() {
 export function login (navigator) {
   return (dispatch) => {
     dispatch(requestUser())
-
+    dispatch(loginLoading())
     GoogleSignin.signIn()
       .then((user) => {
+        dispatch(loginLoaded())
         // User fetched successfully, store it
         dispatch(updateUser(user))
       })
       .catch((err) => {
+        dispatch(loginLoaded())
         // This is done becase google sign in errors can be a bit long & obtuse
         if (err.code === -5) {
           dispatch(showErrorMessage("The user canceled the sign-in flow.", navigator))
