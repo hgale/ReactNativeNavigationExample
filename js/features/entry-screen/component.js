@@ -1,16 +1,18 @@
-import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
-import PropTypes from 'prop-types'
+import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
 
-import style from './style'
+import style from "./style";
 
 class Entry extends React.Component {
-  render () {
-    const { goToCounter, goToTab, goToLogin, name } = this.props
+  render() {
+    const { goToCounter, goToTab, goToLogin, name } = this.props;
     return (
       <View style={style.container}>
         <Text>{name}</Text>
-        <Text style={style.textSub}>This is where you put your onboarding flow, etc</Text>
+        <Text style={style.textSub}>
+          This is where you put your onboarding flow, etc
+        </Text>
         <TouchableOpacity onPress={goToCounter} style={style.textView}>
           <Text style={style.text}>Go to counter screen</Text>
         </TouchableOpacity>
@@ -21,7 +23,7 @@ class Entry extends React.Component {
           <Text style={style.text}>Go to login screen</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
@@ -30,6 +32,6 @@ Entry.propTypes = {
   goToCounter: PropTypes.func.isRequired,
   goToTab: PropTypes.func.isRequired,
   goToLogin: PropTypes.func.isRequired
-}
+};
 
-export default Entry
+export default Entry;

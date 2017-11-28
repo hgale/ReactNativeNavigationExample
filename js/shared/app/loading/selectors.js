@@ -1,22 +1,16 @@
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
-const getLoading = (state, props) => state.loading
+const getLoading = (state, props) => state.loading;
 
-export const isLoginLoading = createSelector(
-  [getLoading],
-  (loading) => {
-    return loading.login
-  }
-)
+export const isLoginLoading = createSelector([getLoading], loading => {
+  return loading.login;
+});
 
-export const isAnythingLoading = createSelector(
-  [getLoading],
-  (loading) => {
-    for (const key in loading) {
-      if (key === true) {
-        return true
-      }
+export const isAnythingLoading = createSelector([getLoading], loading => {
+  for (const key in loading) {
+    if (key === true) {
+      return true;
     }
-    return false
   }
-)
+  return false;
+});

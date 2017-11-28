@@ -34,6 +34,9 @@ fi
 echo "Installing react native modules....."
 npm install
 
+echo "Installing linters....."
+npm run install-linters
+
 # Bundler for Ruby dependencies
 if ! [ -x "$(command -v bundle)" ]; then
   echo "Installing Bundler....."

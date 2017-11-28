@@ -1,34 +1,34 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   colors: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     fontSize: 20,
     margin: 15,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   colorView: {
     width: 80,
     height: 80,
-    margin: 10
+    margin: 10,
   },
   button: {
     padding: 6,
     margin: 10,
-    backgroundColor: 'red'
+    backgroundColor: 'red',
   },
   buttonText: {
     textAlign: 'center',
-    color: 'white'
-  }
-})
+    color: 'white',
+  },
+});

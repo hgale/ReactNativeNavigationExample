@@ -1,6 +1,6 @@
-import immutableTransform from 'redux-persist-transform-immutable'
-import { persistentStoreBlacklist } from './persist-blacklist'
-import { AsyncStorage } from 'react-native'
+import immutableTransform from 'redux-persist-transform-immutable';
+import { AsyncStorage } from 'react-native';
+import { persistentStoreBlacklist } from './persist-blacklist';
 
 const REDUX_PERSIST = {
   active: true,
@@ -8,8 +8,8 @@ const REDUX_PERSIST = {
   storeConfig: {
     storage: AsyncStorage,
     blacklist: persistentStoreBlacklist,
-    transforms: [immutableTransform()]
-  }
-}
+    transforms: [immutableTransform()],
+  },
+};
 
-export default REDUX_PERSIST
+export default REDUX_PERSIST;

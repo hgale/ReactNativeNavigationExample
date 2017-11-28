@@ -1,3 +1,3 @@
-import Root from './js/root'
+import Root from "./js/root";
 
-const app = new Root()
+const app = new Root();

@@ -1,28 +1,29 @@
-import React from 'react'
-import { View } from 'react-native'
-import { GoogleSigninButton } from 'react-native-google-signin'
+import React from "react";
+import { View } from "react-native";
+import { GoogleSigninButton } from "react-native-google-signin";
 
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-import style from './style'
+import style from "./style";
 
 class Login extends React.Component {
-  render () {
-    const { signIn } = this.props
+  render() {
+    const { signIn } = this.props;
     return (
       <View style={style.container}>
         <GoogleSigninButton
-          style={{width: 212, height: 48}}
+          style={{ width: 212, height: 48 }}
           size={GoogleSigninButton.Size.Standard}
           color={GoogleSigninButton.Color.Auto}
-          onPress={signIn}/>
+          onPress={signIn}
+        />
       </View>
-    )
+    );
   }
 }
 
 Login.propTypes = {
   signIn: PropTypes.func.isRequired
-}
+};
 
-export default Login
+export default Login;

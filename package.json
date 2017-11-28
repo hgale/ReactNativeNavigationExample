@@ -4,10 +4,14 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"prettier": "find . -name node_modules -prune -or -name '*.js' -print | xargs prettier --write",
+		"install-linters": "npm install -g eslint eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb babel-eslint eslint-plugin-class-property",
+		"lint": "eslint ."
 	},
 	"dependencies": {
 		"is-empty-object": "^1.1.1",
+		"prop-types": "^15.6.0",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.50",
 		"react-native-google-signin": "^0.12.0",
@@ -23,6 +27,15 @@
 	"devDependencies": {
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
+		"eslint": "^4.12.0",
+		"eslint-config-callstack-io": "^1.0.1",
+		"eslint-config-fb-strict": "^20.0.3",
+		"eslint-config-fbjs": "^1.1.1",
+		"eslint-plugin-babel": "^4.1.1",
+		"eslint-plugin-flowtype": "^2.33.0",
+		"eslint-plugin-prettier": "2.1.1",
+		"eslint-plugin-react": "^7.2.1",
+		"flow-bin": "^0.59.0",
 		"jest": "21.2.1",
 		"react-test-renderer": "16.0.0-beta.5",
 		"reactotron-react-native": "~1.12.2",

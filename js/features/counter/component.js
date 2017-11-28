@@ -1,12 +1,12 @@
-import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
-import PropTypes from 'prop-types'
+import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
+import PropTypes from "prop-types";
 
-import style from './style'
+import style from "./style";
 
 class Counter extends React.Component {
-  render () {
-    const { count, incrementCounter } = this.props
+  render() {
+    const { count, incrementCounter } = this.props;
     return (
       <View style={style.container}>
         <Text>{count}</Text>
@@ -14,13 +14,13 @@ class Counter extends React.Component {
           <Text style={style.text}>Increment counter</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
 Counter.propTypes = {
   incrementCounter: PropTypes.func.isRequired,
-  count: PropTypes.number.isRequired,
-}
+  count: PropTypes.number.isRequired
+};
 
-export default Counter
+export default Counter;
