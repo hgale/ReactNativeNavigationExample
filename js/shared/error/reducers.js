@@ -13,7 +13,6 @@ const error = (state = defaultState, action) => {
     case REHYDRATE:
       return Object.assign({}, state)
     case t.SET_ERROR_MESSAGE:
-      console.log('SET_ERROR_MESSAGE with ', action.error);
       return Object.assign({}, {
         errorMessage: action.error
       })
