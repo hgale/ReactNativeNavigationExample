@@ -1,0 +1,3 @@
+
+install:
+	utils/install.sh
