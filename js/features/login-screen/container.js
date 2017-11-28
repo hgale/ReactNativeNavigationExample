@@ -18,7 +18,7 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    login: () => dispatch(login()),
+    login: () => dispatch(login(props.navigator)),
     logout: () => dispatch(logout()),
     setupGoogleSignin: () => { setupGoogleSignin() }
   }

@@ -1,5 +1,6 @@
 import { GoogleSignin } from 'react-native-google-signin'
 
+import { showErrorMessage } from '../error/actions'
 import { REVERSED_CLIENT_ID } from '../../shared/const'
 import t from './actionTypes'
 
@@ -48,7 +49,7 @@ export async function setupGoogleSignin() {
 /**
  * Login
  */
-export function login () {
+export function login (navigator) {
   return (dispatch) => {
     dispatch(requestUser())
 
@@ -58,8 +59,12 @@ export function login () {
         dispatch(updateUser(user))
       })
       .catch((err) => {
-        // TODO: implement dispatch error message event
-        console.log('WRONG SIGNIN', err);
+        // This is done becase google sign in errors can be a bit long & obtuse
+        if (err.code === -5) {
+          dispatch(showErrorMessage("The user canceled the sign-in flow.", navigator))
+        } else {
+          dispatch(showErrorMessage(err.message, navigator))
+        }
       })
       .done()
   }

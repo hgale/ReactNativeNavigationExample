@@ -23,7 +23,6 @@ class ErrorContainer extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-  // TODO: clean this up
   return {
     message: state.error ? state.error.errorMessage : null
   }

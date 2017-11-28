@@ -6,7 +6,8 @@ const commonPages = {
   ENTRY: 'WELCOME',
   COUNTER: 'COUNTER',
   COLORS: 'COLORS',
-  LOGIN: 'LOGIN'
+  LOGIN: 'LOGIN',
+  ERROR: 'ERROR'
 }
 
 export const pages = Object.assign({}, commonPages)
