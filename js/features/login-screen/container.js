@@ -1,18 +1,18 @@
-import { connect } from "react-redux";
-import React from "react";
+import { connect } from 'react-redux';
+import React from 'react';
 
-import { login, setupGoogleSignin, logout } from "../../shared/user/actions";
+import { login, setupGoogleSignin, logout } from '../../shared/user/actions';
 import {
   isLoggedIn,
   getName,
   getPhoto,
   getEmail
-} from "../../shared/user/selectors";
-import { isLoginLoading } from "../../shared/app/loading/selectors";
+} from '../../shared/user/selectors';
+import { isLoginLoading } from '../../shared/app/loading/selectors';
 
-import LoadingScreen from "../../shared/app/loading/";
-import Login from "./component";
-import Profile from "./profile";
+import LoadingScreen from '../../shared/app/loading/';
+import Login from './component';
+import Profile from './profile';
 
 const mapStateToProps = (state, props) => {
   return {
@@ -20,7 +20,7 @@ const mapStateToProps = (state, props) => {
     name: getName(state, props),
     email: getEmail(state, props),
     loading: isLoginLoading(state, props),
-    isLoggedIn: isLoggedIn(state, props)
+    isLoggedIn: isLoggedIn(state, props),
   };
 };
 
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, props) => {
     logout: () => dispatch(logout()),
     setupGoogleSignin: () => {
       setupGoogleSignin();
-    }
+    },
   };
 };
 

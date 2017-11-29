@@ -2,20 +2,20 @@
  * Component for initial screen.
  * With react-native-navigator, root cannot be a component, so startup tasks are contained here.
  */
-import React from "react";
-import { connect } from "react-redux";
-import { getStartScreen } from "../actions";
-import LoadingScreen from "../loading/";
+import React from 'react';
+import { connect } from 'react-redux';
+import { getStartScreen } from '../actions';
+import LoadingScreen from '../loading/';
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = state => {
   return {
-    hasRehydrationFinished: state.app.hasRehydrationFinished
+    hasRehydrationFinished: state.app.hasRehydrationFinished,
   };
 };
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    getStartScreen: () => dispatch(getStartScreen(props.navigator))
+    getStartScreen: () => dispatch(getStartScreen(props.navigator)),
   };
 };
 

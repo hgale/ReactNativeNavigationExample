@@ -5,7 +5,7 @@ import t from "./actionTypes";
 export function incrementCounter() {
   return dispatch => {
     dispatch({
-      type: t.INCREMENT_COUNTER
+      type: t.INCREMENT_COUNTER,
     });
   };
 }

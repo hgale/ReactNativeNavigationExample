@@ -1,8 +1,8 @@
-import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
-import style from "./style";
+import style from './style';
 
 class Counter extends React.Component {
   render() {

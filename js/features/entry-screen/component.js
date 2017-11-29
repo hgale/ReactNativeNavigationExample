@@ -1,8 +1,8 @@
-import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Text, View, TouchableOpacity } from 'react-native';
+import PropTypes from 'prop-types';
 
-import style from "./style";
+import style from './style';
 
 class Entry extends React.Component {
   render() {
@@ -31,7 +31,7 @@ Entry.propTypes = {
   name: PropTypes.string.isRequired,
   goToCounter: PropTypes.func.isRequired,
   goToTab: PropTypes.func.isRequired,
-  goToLogin: PropTypes.func.isRequired
+  goToLogin: PropTypes.func.isRequired,
 };
 
 export default Entry;

@@ -1,18 +1,18 @@
-import { connect } from "react-redux";
-import React from "react";
+import { connect } from 'react-redux';
+import React from 'react';
 
-import { incrementCounter } from "./actions";
-import Counter from "./component";
+import { incrementCounter } from './actions';
+import Counter from './component';
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = state => {
   return {
-    count: state.counter.count
+    count: state.counter.count,
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = dispatch => {
   return {
-    incrementCounter: () => dispatch(incrementCounter())
+    incrementCounter: () => dispatch(incrementCounter()),
   };
 };
 

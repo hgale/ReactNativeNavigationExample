@@ -1,10 +1,10 @@
-import React from "react";
-import { View } from "react-native";
-import { GoogleSigninButton } from "react-native-google-signin";
+import React from 'react';
+import { View } from 'react-native';
+import { GoogleSigninButton } from 'react-native-google-signin';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import style from "./style";
+import style from './style';
 
 class Login extends React.Component {
   render() {

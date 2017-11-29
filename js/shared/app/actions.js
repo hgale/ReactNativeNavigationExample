@@ -1,11 +1,11 @@
-import { Navigation } from "react-native-navigation";
-import { AppState, Linking } from "react-native";
-import { navigatorStyle, navTypes } from "../const";
+import { Navigation } from 'react-native-navigation';
+import { AppState, Linking } from 'react-native';
+import { navigatorStyle, navTypes } from '../const';
 
-import t from "./actionTypes";
+import t from './actionTypes';
 
-import { getNavScreen } from "../../utils";
-import { pages } from "../../navigation/pages";
+import { getNavScreen } from '../../utils';
+import { pages } from '../../navigation/pages';
 
 export function initializeApp(root) {
   return dispatch => {
@@ -20,18 +20,18 @@ export function initializeApp(root) {
       Navigation.startTabBasedApp({
         tabs: [
           {
-            label: "Counter",
+            label: 'Counter',
             screen: pages.COUNTER,
-            title: "Counter",
+            title: 'Counter',
             overrideBackPress: false, //this can be turned to true for android
-            navigatorStyle: {}
+            navigatorStyle: {},
           },
           {
-            label: "Colors",
+            label: 'Colors',
             screen: pages.COLORS,
-            title: "Colors",
-            navigatorStyle: {}
-          }
+            title: 'Colors',
+            navigatorStyle: {},
+          },
         ]
       });
     } else {
@@ -49,14 +49,14 @@ export function initializeApp(root) {
 
 function setupListeners(): Function {
   return dispatch => {
-    AppState.removeEventListener("change", handleAppStateChange);
-    AppState.addEventListener("change", handleAppStateChange);
-    Linking.removeEventListener("url", handleOpenURL);
-    Linking.addEventListener("url", handleOpenURL);
+    AppState.removeEventListener('change', handleAppStateChange);
+    AppState.addEventListener('change', handleAppStateChange);
+    Linking.removeEventListener('url', handleOpenURL);
+    Linking.addEventListener('url', handleOpenURL);
 
     // This is used to kick off events when the app goes from background to foreground
     function handleAppStateChange(appState) {
-      if (appState === "active") {
+      if (appState === 'active') {
       }
     }
 
@@ -93,10 +93,4 @@ function getInitialPage(state) {
 }
 
 function processOpenUrl(url, dispatch) {
-  let token = "";
-  // Match routes
-  if (url.indexOf("/pathone/") > 0) {
-    // Process payload then dispatch an action
-  } else if (url.indexOf("/pathtwo/") > 0) {
-  }
 }
