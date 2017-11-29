@@ -13,8 +13,8 @@ export function initializeApp(root) {
       Navigation.startSingleScreenApp({
         screen: {
           screen: pages.INITIAL,
-          navigatorStyle: navigatorStyle
-        }
+          navigatorStyle: navigatorStyle,
+        },
       });
     } else if (root === navTypes.tab) {
       Navigation.startTabBasedApp({
@@ -23,7 +23,7 @@ export function initializeApp(root) {
             label: 'Counter',
             screen: pages.COUNTER,
             title: 'Counter',
-            overrideBackPress: false, //this can be turned to true for android
+            overrideBackPress: false, // this can be turned to true for android
             navigatorStyle: {},
           },
           {
@@ -32,7 +32,7 @@ export function initializeApp(root) {
             title: 'Colors',
             navigatorStyle: {},
           },
-        ]
+        ],
       });
     } else {
       return;
@@ -42,7 +42,7 @@ export function initializeApp(root) {
     dispatch(setupListeners());
 
     dispatch({
-      type: t.INITIALIZE_APP
+      type: t.INITIALIZE_APP,
     });
   };
 }
@@ -78,7 +78,7 @@ export function getStartScreen(navigator): Function {
     const startPage = getInitialPage(getState());
     navigator.resetTo(startPage);
     dispatch({
-      type: t.GET_START_SCREEN
+      type: t.GET_START_SCREEN,
     });
   };
 }

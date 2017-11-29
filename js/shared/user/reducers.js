@@ -3,23 +3,23 @@
  * It contains all the authentication related info
  * */
 
-import { REHYDRATE } from "redux-persist/constants";
+import { REHYDRATE } from 'redux-persist/constants';
 
-import t from "./actionTypes";
+import t from './actionTypes';
 
 // Default state. It should never change
 const defaultState = {
   // TODO: Move sensitive info into secure storage in a follow up diff
-  accessToken: "",
-  givenName: "",
-  name: "",
-  familyName: "",
-  email: "",
-  photo: "",
-  accessTokenExpirationDate: "",
-  serverAuthCode: "",
-  id: "",
-  idToken: ""
+  accessToken: '',
+  givenName: '',
+  name: '',
+  familyName: '',
+  email: '',
+  photo: '',
+  accessTokenExpirationDate: '',
+  serverAuthCode: '',
+  id: '',
+  idToken: '',
 };
 
 let initialState = defaultState;

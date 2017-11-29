@@ -1,6 +1,6 @@
-import ReduxPersist from "../config/ReduxPersist";
-import { AsyncStorage } from "react-native";
-import { persistStore } from "redux-persist";
+import ReduxPersist from '../config/ReduxPersist';
+import { AsyncStorage } from 'react-native';
+import { persistStore } from 'redux-persist';
 
 const updateReducers = store => {
   const reducerVersion = ReduxPersist.reducerVersion;
@@ -12,7 +12,7 @@ const updateReducers = store => {
   });
 
   // Check to ensure latest reducer version
-  AsyncStorage.getItem("reducerVersion")
+  AsyncStorage.getItem('reducerVersion')
     .then(localVersion => {
       if (localVersion !== reducerVersion) {
         // Purge store and refresh
@@ -21,10 +21,10 @@ const updateReducers = store => {
           persistStore(store, config);
         }).purgeAll();
         // Update reducer to current version number
-        AsyncStorage.setItem("reducerVersion", reducerVersion);
+        AsyncStorage.setItem('reducerVersion', reducerVersion);
       }
     })
-    .catch(() => AsyncStorage.setItem("reducerVersion", reducerVersion));
+    .catch(() => AsyncStorage.setItem('reducerVersion', reducerVersion));
 };
 
 export default { updateReducers };

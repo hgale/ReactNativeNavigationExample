@@ -1,10 +1,10 @@
-import { Provider } from "react-redux";
-import { GoogleSignin, GoogleSigninButton } from "react-native-google-signin";
-import getStore from "./reducers";
+import { Provider } from 'react-redux';
+import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+import getStore from './reducers';
 
-import { registerScreens } from "./navigation/screens";
-import { initializeApp } from "./shared/app/actions";
-import { navTypes } from "./shared/const";
+import { registerScreens } from './navigation/screens';
+import { initializeApp } from './shared/app/actions';
+import { navTypes } from './shared/const';
 const store = getStore();
 
 registerScreens(store, Provider);

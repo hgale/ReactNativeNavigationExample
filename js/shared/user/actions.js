@@ -1,9 +1,9 @@
-import { GoogleSignin } from "react-native-google-signin";
+import { GoogleSignin } from 'react-native-google-signin';
 
-import { showErrorMessage } from "../error/actions";
-import { REVERSED_CLIENT_ID } from "../../shared/const";
-import { loginLoading, loginLoaded } from "../../shared/app/loading/actions";
-import t from "./actionTypes";
+import { showErrorMessage } from '../error/actions';
+import { REVERSED_CLIENT_ID } from '../../shared/const';
+import { loginLoading, loginLoaded } from '../../shared/app/loading/actions';
+import t from './actionTypes';
 
 /**
  * GoogleSignin is about to make a request for the user to sign in
@@ -11,7 +11,7 @@ import t from "./actionTypes";
 function requestUser() {
   return dispatch => {
     dispatch({
-      type: t.REQUEST_USER
+      type: t.REQUEST_USER,
     });
   };
 }
@@ -23,7 +23,7 @@ function updateUser(user) {
   return dispatch => {
     dispatch({
       type: t.UPDATE_USER,
-      user
+      user,
     });
   };
 }
@@ -34,10 +34,9 @@ export async function setupGoogleSignin() {
     await GoogleSignin.configure({
       iosClientId: REVERSED_CLIENT_ID,
       webClientId: REVERSED_CLIENT_ID,
-      offlineAccess: false
+      offlineAccess: false,
     });
   } catch (err) {
-    console.log("Google signin error", err.code, err.message);
   }
 }
 
@@ -59,7 +58,7 @@ export function login(navigator) {
         // This is done becase google sign in errors can be a bit long & obtuse
         if (err.code === -5) {
           dispatch(
-            showErrorMessage("The user canceled the sign-in flow.", navigator)
+            showErrorMessage('The user canceled the sign-in flow.', navigator)
           );
         } else {
           dispatch(showErrorMessage(err.message, navigator));
@@ -75,7 +74,7 @@ export function login(navigator) {
 export function logout() {
   return dispatch => {
     dispatch({
-      type: t.LOGOUT
+      type: t.LOGOUT,
     });
     GoogleSignin.revokeAccess()
       .then(() => GoogleSignin.signOut())
