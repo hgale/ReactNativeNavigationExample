@@ -1,10 +1,10 @@
 /**
  * Loading screen component
  */
-import React from "react";
-import { Text, View, ActivityIndicator } from "react-native";
+import React from 'react';
+import { Text, View, ActivityIndicator } from 'react-native';
 
-import style from "./style";
+import style from './style';
 
 export default class LoadingScreen extends React.Component {
   render() {

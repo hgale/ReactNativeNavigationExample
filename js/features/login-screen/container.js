@@ -6,7 +6,7 @@ import {
   isLoggedIn,
   getName,
   getPhoto,
-  getEmail
+  getEmail,
 } from '../../shared/user/selectors';
 import { isLoginLoading } from '../../shared/app/loading/selectors';
 
@@ -14,25 +14,21 @@ import LoadingScreen from '../../shared/app/loading/';
 import Login from './component';
 import Profile from './profile';
 
-const mapStateToProps = (state, props) => {
-  return {
-    photo: getPhoto(state, props),
-    name: getName(state, props),
-    email: getEmail(state, props),
-    loading: isLoginLoading(state, props),
-    isLoggedIn: isLoggedIn(state, props),
-  };
-};
+const mapStateToProps = (state, props) => ({
+  photo: getPhoto(state, props),
+  name: getName(state, props),
+  email: getEmail(state, props),
+  loading: isLoginLoading(state, props),
+  isLoggedIn: isLoggedIn(state, props),
+});
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    login: () => dispatch(login(props.navigator)),
-    logout: () => dispatch(logout()),
-    setupGoogleSignin: () => {
-      setupGoogleSignin();
-    },
-  };
-};
+const mapDispatchToProps = (dispatch, props) => ({
+  login: () => dispatch(login(props.navigator)),
+  logout: () => dispatch(logout()),
+  setupGoogleSignin: () => {
+    setupGoogleSignin();
+  },
+});
 
 class LoginContainer extends React.Component {
   componentDidMount() {
@@ -45,9 +41,8 @@ class LoginContainer extends React.Component {
       return <LoadingScreen />;
     } else if (isLoggedIn) {
       return <Profile {...this.props} />;
-    } else {
-      return <Login signIn={this.props.login} />;
     }
+    return <Login signIn={this.props.login} />;
   }
 }
 

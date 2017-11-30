@@ -1,12 +1,12 @@
-import { Navigation } from "react-native-navigation";
-import React from "react";
+import { Navigation } from 'react-native-navigation';
+import React from 'react';
 
-import * as rootExports from "../shared/routes";
+import * as rootExports from '../shared/routes';
 
 export const pagesMap = rootExports.pageMap;
 
 export function registerScreens(store, Provider) {
-  for (let pageItem of pagesMap) {
+  for (const pageItem of pagesMap) {
     registerScreen(pageItem, store, Provider);
   }
 }

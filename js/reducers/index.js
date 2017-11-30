@@ -22,13 +22,12 @@ const appReducer = combineReducers({
   counter,
 });
 
-const reducers = (state, action) => {
+const reducers = (state, action) =>
   // this could allow us to have specific code for intercepting high level actions and reseting states.
   // otherwise, let's just proceed and pass everything to the reducers
-  return appReducer(state, action);
-};
+  appReducer(state, action);
 
-let middleware = [thunk, createActionBuffer(REHYDRATE)];
+const middleware = [thunk, createActionBuffer(REHYDRATE)];
 
 // a function which can create our store and auto-persist the data
 export default () => {

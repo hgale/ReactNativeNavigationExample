@@ -20,7 +20,7 @@ class Counter extends React.Component {
 
 Counter.propTypes = {
   incrementCounter: PropTypes.func.isRequired,
-  count: PropTypes.number.isRequired
+  count: PropTypes.number.isRequired,
 };
 
 export default Counter;

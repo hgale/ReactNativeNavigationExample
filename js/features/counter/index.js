@@ -4,17 +4,13 @@ import React from 'react';
 import { incrementCounter } from './actions';
 import Counter from './component';
 
-const mapStateToProps = state => {
-  return {
-    count: state.counter.count,
-  };
-};
+const mapStateToProps = state => ({
+  count: state.counter.count,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    incrementCounter: () => dispatch(incrementCounter()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  incrementCounter: () => dispatch(incrementCounter()),
+});
 
 class CounterContainer extends React.Component {
   render() {

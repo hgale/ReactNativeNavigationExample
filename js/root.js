@@ -5,6 +5,7 @@ import getStore from './reducers';
 import { registerScreens } from './navigation/screens';
 import { initializeApp } from './shared/app/actions';
 import { navTypes } from './shared/const';
+
 const store = getStore();
 
 registerScreens(store, Provider);

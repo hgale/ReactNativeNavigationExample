@@ -1,9 +1,9 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import style from "./style";
+import style from './style';
 
 // TODO: Move this into a proile feature, right now this is here for the purpose of example
 class Profile extends React.Component {
@@ -25,7 +25,7 @@ class Profile extends React.Component {
 
 Profile.propTypes = {
   email: PropTypes.string.isRequired,
-  logout: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired,
 };
 
 export default Profile;

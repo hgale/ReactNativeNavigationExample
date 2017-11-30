@@ -8,7 +8,9 @@ function generateRandomColors() {
   Array(3)
     .fill()
     .map(() => {
-      const randomValue = Math.round(Math.random() * (maxVal - minVal) + minVal);
+      const randomValue = Math.round(
+        Math.random() * (maxVal - minVal) + minVal
+      );
       randomColors.push(miscColors[randomValue]);
     });
   return randomColors;

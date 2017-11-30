@@ -3,17 +3,13 @@ import React from 'react';
 import Colors from './component';
 import { updateColors } from './actions';
 
-const mapStateToProps = state => {
-  return {
-    colors: state.colorScreen.colors,
-  };
-};
+const mapStateToProps = state => ({
+  colors: state.colorScreen.colors,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    generateRandomColors: () => dispatch(updateColors()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  generateRandomColors: () => dispatch(updateColors()),
+});
 
 class ColorContainer extends React.Component {
   render() {

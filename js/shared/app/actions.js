@@ -13,7 +13,7 @@ export function initializeApp(root) {
       Navigation.startSingleScreenApp({
         screen: {
           screen: pages.INITIAL,
-          navigatorStyle: navigatorStyle,
+          navigatorStyle,
         },
       });
     } else if (root === navTypes.tab) {
@@ -92,5 +92,4 @@ function getInitialPage(state) {
   return getNavScreen(pages.ENTRY);
 }
 
-function processOpenUrl(url, dispatch) {
-}
+function processOpenUrl(url, dispatch) {}

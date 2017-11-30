@@ -6,17 +6,13 @@ import { pages } from '../../navigation/pages';
 import { getNavScreen } from '../../utils';
 import Entry from './component';
 
-const mapStateToProps = state => {
-  return {
-    name: state.app.appName,
-  };
-};
+const mapStateToProps = state => ({
+  name: state.app.appName,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    goToTabs: () => dispatch(initializeApp(navTypes.tab)),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  goToTabs: () => dispatch(initializeApp(navTypes.tab)),
+});
 
 class EntryContainer extends React.Component {
   goToCounter = () => {

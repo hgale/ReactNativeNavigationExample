@@ -17,22 +17,12 @@ export const isLoggedIn = createSelector(
   token => !!token && token.length > 0
 );
 
-export const getGivenName = createSelector([getUser], user => {
-  return user.givenName;
-});
+export const getGivenName = createSelector([getUser], user => user.givenName);
 
-export const getFamilyName = createSelector([getUser], user => {
-  return user.familyName;
-});
+export const getFamilyName = createSelector([getUser], user => user.familyName);
 
-export const getName = createSelector([getUser], user => {
-  return user.name;
-});
+export const getName = createSelector([getUser], user => user.name);
 
-export const getEmail = createSelector([getUser], user => {
-  return user.email;
-});
+export const getEmail = createSelector([getUser], user => user.email);
 
-export const getPhoto = createSelector([getUser], user => {
-  return user.photo;
-});
+export const getPhoto = createSelector([getUser], user => user.photo);

@@ -10,7 +10,7 @@ export default StyleSheet.create({
   textView: {
     padding: 6,
     margin: 10,
-    backgroundColor: 'red'
+    backgroundColor: 'red',
   },
   textSub: {
     margin: 5,

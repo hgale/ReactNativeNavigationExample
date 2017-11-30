@@ -22,16 +22,15 @@ const defaultState = {
   idToken: '',
 };
 
-let initialState = defaultState;
+const initialState = defaultState;
 
 const user = (state = defaultState, action) => {
   switch (action.type) {
     case REHYDRATE:
       if (action.payload && action.payload.user) {
         return Object.assign({}, action.payload.user);
-      } else {
-        return Object.assign({}, state);
       }
+      return Object.assign({}, state);
 
     case t.LOGOUT:
       return Object.assign({}, defaultState);

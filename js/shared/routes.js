@@ -1,4 +1,4 @@
-/** Consolidate all of the different page routes from the feature directories **/
+/** Consolidate all of the different page routes from the feature directories * */
 import InitialScreenContainer from './app/initial-screen';
 import ErrorContainer from './error';
 import EntryContainer from '../features/entry-screen/container';

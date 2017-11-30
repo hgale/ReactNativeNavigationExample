@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { View, Text } from "react-native";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
 
-import { isAndroid } from "../../utils";
+import { isAndroid } from '../../utils';
 
-import style from "./style";
+import style from './style';
 
 class ErrorContainer extends Component {
   render() {
@@ -17,7 +17,7 @@ class ErrorContainer extends Component {
       );
     } else {
       text = (
-        <Text numberOfLines={2} ellipsizeMode={"clip"} style={style.content}>
+        <Text numberOfLines={2} ellipsizeMode={'clip'} style={style.content}>
           {this.props.message}
         </Text>
       );
@@ -26,11 +26,9 @@ class ErrorContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return {
-    message: state.error ? state.error.errorMessage : null
-  };
-};
+const mapStateToProps = (state, props) => ({
+  message: state.error ? state.error.errorMessage : null,
+});
 
 const reduxContainer = connect(mapStateToProps)(ErrorContainer);
 

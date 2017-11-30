@@ -11,7 +11,7 @@ const counter = (state = defaultState, action) => {
     case t.INCREMENT_COUNTER:
       const count = state.count + 1;
       return Object.assign({}, state, {
-        count: count,
+        count,
       });
     default:
       return state;

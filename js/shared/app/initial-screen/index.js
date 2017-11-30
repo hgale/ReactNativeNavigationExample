@@ -7,17 +7,13 @@ import { connect } from 'react-redux';
 import { getStartScreen } from '../actions';
 import LoadingScreen from '../loading/';
 
-const mapStateToProps = state => {
-  return {
-    hasRehydrationFinished: state.app.hasRehydrationFinished,
-  };
-};
+const mapStateToProps = state => ({
+  hasRehydrationFinished: state.app.hasRehydrationFinished,
+});
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    getStartScreen: () => dispatch(getStartScreen(props.navigator)),
-  };
-};
+const mapDispatchToProps = (dispatch, props) => ({
+  getStartScreen: () => dispatch(getStartScreen(props.navigator)),
+});
 
 class InitialScreenContainer extends React.Component {
   initializeAfterRehydration(props) {

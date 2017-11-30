@@ -3,12 +3,12 @@
  * It should contain app related data and it should not persist
  */
 
-import { REHYDRATE } from "redux-persist/constants";
-import t from "./actionTypes";
+import { REHYDRATE } from 'redux-persist/constants';
+import t from './actionTypes';
 
 const defaultState = {
   hasRehydrationFinished: false,
-  appName: ""
+  appName: '',
 };
 
 const app = (state = defaultState, action) => {
@@ -16,7 +16,7 @@ const app = (state = defaultState, action) => {
     case REHYDRATE:
       return Object.assign({}, action.payload.app, {
         hasRehydrationFinished: true,
-        appName: "RNN Demo"
+        appName: 'RNN Demo',
       });
 
     case t.GET_START_SCREEN:

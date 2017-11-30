@@ -1,13 +1,13 @@
-import { REHYDRATE } from "redux-persist/constants";
-import t from "./actionTypes";
+import { REHYDRATE } from 'redux-persist/constants';
+import t from './actionTypes';
 
 const defaultState: ErrorStateType = {
-  errorMessage: null
+  errorMessage: null,
 };
 
 const error = (state = defaultState, action) => {
   switch (action.type) {
-    case "LOGOUT":
+    case 'LOGOUT':
       return Object.assign({}, defaultState);
 
     case REHYDRATE:
@@ -16,7 +16,7 @@ const error = (state = defaultState, action) => {
       return Object.assign(
         {},
         {
-          errorMessage: action.error
+          errorMessage: action.error,
         }
       );
     default:
