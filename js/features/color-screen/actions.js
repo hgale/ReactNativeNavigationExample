@@ -2,7 +2,7 @@ import t from './actionTypes';
 /**
  * Regenerate random colors
  */
-export function updateColors() {
+export default function updateColors() {
   return dispatch => {
     dispatch({
       type: t.UPDATE_COLORS,

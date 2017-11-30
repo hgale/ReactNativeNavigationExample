@@ -1,5 +1,5 @@
 import t from './actionTypes';
-import { miscColors } from './colors';
+import miscColors from './colors';
 
 function generateRandomColors() {
   const randomColors = [];

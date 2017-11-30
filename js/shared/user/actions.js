@@ -36,7 +36,9 @@ export async function setupGoogleSignin() {
       webClientId: REVERSED_CLIENT_ID,
       offlineAccess: false,
     });
-  } catch (err) {}
+  } catch (err) {
+    // Continue regardless of error
+  }
 }
 
 /**
