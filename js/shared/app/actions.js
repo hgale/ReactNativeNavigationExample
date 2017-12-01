@@ -5,7 +5,7 @@ import { navigatorStyle, navTypes } from '../const';
 import t from './actionTypes';
 
 import { getNavScreen } from '../../utils';
-import { pages } from '../../navigation/pages';
+import pages from '../../navigation/pages';
 
 export function initializeApp(root) {
   return dispatch => {
@@ -47,7 +47,7 @@ export function initializeApp(root) {
   };
 }
 
-function setupListeners(): Function {
+function setupListeners() {
   return dispatch => {
     AppState.removeEventListener('change', handleAppStateChange);
     AppState.addEventListener('change', handleAppStateChange);
@@ -55,10 +55,7 @@ function setupListeners(): Function {
     Linking.addEventListener('url', handleOpenURL);
 
     // This is used to kick off events when the app goes from background to foreground
-    function handleAppStateChange(appState) {
-      if (appState === 'active') {
-      }
-    }
+    function handleAppStateChange() {}
 
     function handleOpenURL(event) {
       processOpenUrl(event.url, dispatch);
@@ -70,7 +67,7 @@ function setupListeners(): Function {
  * Determines first screen after loading. Should only be called when
  * rehydration has finished.
  */
-export function getStartScreen(navigator): Function {
+export function getStartScreen(navigator) {
   return (dispatch, getState) => {
     if (navigator === null) {
       return;
@@ -87,9 +84,9 @@ export function getStartScreen(navigator): Function {
  * Determines the first screen to go to. This assumes rehydration and other loaders
  * have finished.
  */
-function getInitialPage(state) {
+function getInitialPage() {
   // Determine what page to display
   return getNavScreen(pages.ENTRY);
 }
 
-function processOpenUrl(url, dispatch) {}
+function processOpenUrl() {}

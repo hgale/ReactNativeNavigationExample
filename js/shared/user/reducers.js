@@ -22,8 +22,6 @@ const defaultState = {
   idToken: '',
 };
 
-const initialState = defaultState;
-
 const user = (state = defaultState, action) => {
   switch (action.type) {
     case REHYDRATE:

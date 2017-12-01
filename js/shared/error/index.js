@@ -26,7 +26,7 @@ class ErrorContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = state => ({
   message: state.error ? state.error.errorMessage : null,
 });
 

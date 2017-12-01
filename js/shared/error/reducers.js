@@ -1,7 +1,7 @@
 import { REHYDRATE } from 'redux-persist/constants';
 import t from './actionTypes';
 
-const defaultState: ErrorStateType = {
+const defaultState = {
   errorMessage: null,
 };
 

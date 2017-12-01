@@ -3,7 +3,6 @@ import { autoRehydrate } from 'redux-persist';
 import { REHYDRATE } from 'redux-persist/constants';
 import createActionBuffer from 'redux-action-buffer';
 import thunk from 'redux-thunk';
-import Reactotron from 'reactotron-react-native';
 
 import RehydrationServices from '../services/RehydrationServices';
 import colorScreen from '../features/color-screen/reducers';

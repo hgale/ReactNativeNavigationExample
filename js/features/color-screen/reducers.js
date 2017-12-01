@@ -7,7 +7,7 @@ function generateRandomColors() {
   const minVal = 0;
   Array(3)
     .fill()
-    .map(() => {
+    .forEach(() => {
       const randomValue = Math.round(
         Math.random() * (maxVal - minVal) + minVal
       );

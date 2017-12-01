@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { initializeApp } from '../../shared/app/actions';
 import { navTypes } from '../../shared/const';
-import { pages } from '../../navigation/pages';
+import pages from '../../navigation/pages';
 import { getNavScreen } from '../../utils';
 import Entry from './component';
 

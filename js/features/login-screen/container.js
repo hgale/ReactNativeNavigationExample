@@ -19,7 +19,7 @@ const mapStateToProps = (state, props) => ({
   name: getName(state, props),
   email: getEmail(state, props),
   loading: isLoginLoading(state, props),
-  isLoggedIn: isLoggedIn(state, props),
+  loggedIn: isLoggedIn(state, props),
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -36,10 +36,10 @@ class LoginContainer extends React.Component {
   }
 
   render() {
-    const { isLoggedIn, loading } = this.props;
+    const { loggedIn, loading } = this.props;
     if (loading) {
       return <LoadingScreen />;
-    } else if (isLoggedIn) {
+    } else if (loggedIn) {
       return <Profile {...this.props} />;
     }
     return <Login signIn={this.props.login} />;

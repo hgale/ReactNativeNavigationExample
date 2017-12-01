@@ -15,27 +15,27 @@ const mapDispatchToProps = (dispatch, props) => ({
   getStartScreen: () => dispatch(getStartScreen(props.navigator)),
 });
 
-class InitialScreenContainer extends React.Component {
-  initializeAfterRehydration(props) {
-    // Checks that require rehydration has finished so that if we are checking things in store,
-    // i.e user logged in, etc, we know that the store has finished loading.
-    if (props.hasRehydrationFinished) {
-      // console.log('H');
-      props.getStartScreen();
-    }
+function initializeAfterRehydration(props) {
+  // Checks that require rehydration has finished so that if we are checking things in store,
+  // i.e user logged in, etc, we know that the store has finished loading.
+  if (props.hasRehydrationFinished) {
+    // console.log('H');
+    props.getStartScreen();
   }
+}
 
+class InitialScreenContainer extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (
       !this.props.hasRehydrationFinished &&
       nextProps.hasRehydrationFinished
     ) {
-      this.initializeAfterRehydration(nextProps);
+      initializeAfterRehydration(nextProps);
     }
   }
 
   componentWillMount() {
-    this.initializeAfterRehydration(this.props);
+    initializeAfterRehydration(this.props);
   }
 
   render() {

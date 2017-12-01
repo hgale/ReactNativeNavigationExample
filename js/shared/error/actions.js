@@ -1,5 +1,5 @@
 import t from './actionTypes';
-import { pages } from '../../navigation/pages';
+import pages from '../../navigation/pages';
 
 function setErrorMessage(error) {
   return dispatch => {
@@ -10,7 +10,7 @@ function setErrorMessage(error) {
   };
 }
 
-export function showErrorMessage(error, navigator) {
+export default function showErrorMessage(error, navigator) {
   return dispatch => {
     dispatch(setErrorMessage(error));
     navigator.showInAppNotification({

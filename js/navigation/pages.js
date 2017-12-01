@@ -9,4 +9,6 @@ const commonPages = {
   ERROR: 'ERROR',
 };
 
-export const pages = Object.assign({}, commonPages);
+const pages = Object.assign({}, commonPages);
+
+export default pages;

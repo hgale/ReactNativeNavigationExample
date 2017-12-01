@@ -9,7 +9,6 @@ import style from './style';
 class Profile extends React.Component {
   render() {
     const { logout, photo, name, email } = this.props;
-    console.log(photo);
     return (
       <View style={style.container}>
         <Image style={style.profileImage} source={{ uri: photo }} />

@@ -8,7 +8,7 @@ class Colors extends React.Component {
   render() {
     const { colors, generateRandomColors } = this.props;
     const colorViews = [];
-    colors.map(color => {
+    colors.forEach(color => {
       colorViews.push(
         <View
           key={color}
@@ -30,7 +30,7 @@ class Colors extends React.Component {
 
 Colors.propTypes = {
   generateRandomColors: PropTypes.func.isRequired,
-  colors: PropTypes.array.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Colors;

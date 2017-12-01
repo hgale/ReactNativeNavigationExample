@@ -1,6 +1,6 @@
 import { GoogleSignin } from 'react-native-google-signin';
 
-import { showErrorMessage } from '../error/actions';
+import showErrorMessage from '../error/actions';
 import { REVERSED_CLIENT_ID } from '../../shared/const';
 import { loginLoading, loginLoaded } from '../../shared/app/loading/actions';
 import t from './actionTypes';

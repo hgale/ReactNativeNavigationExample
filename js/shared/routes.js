@@ -5,9 +5,9 @@ import EntryContainer from '../features/entry-screen/container';
 import LoginContainer from '../features/login-screen/container';
 import ColorContainer from '../features/color-screen/container';
 import CounterContainer from '../features/counter';
-import { pages } from '../navigation/pages';
+import pages from '../navigation/pages';
 
-export const pageMap = [
+const pageMap = [
   { id: pages.INITIAL, component: InitialScreenContainer },
   { id: pages.ENTRY, component: EntryContainer },
   { id: pages.COUNTER, component: CounterContainer },
@@ -15,3 +15,5 @@ export const pageMap = [
   { id: pages.LOGIN, component: LoginContainer },
   { id: pages.ERROR, component: ErrorContainer },
 ];
+
+export default pageMap;

@@ -10,7 +10,7 @@ export function isAndroid() {
 /**
  * Helper method to check var is empty
  */
-export function isEmptyVar(input: any): boolean {
+export function isEmptyVar(input) {
   return (
     input === null ||
     input === 'undefined' ||

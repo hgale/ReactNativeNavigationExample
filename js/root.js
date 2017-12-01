@@ -1,5 +1,4 @@
 import { Provider } from 'react-redux';
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
 import getStore from './reducers';
 
 import { registerScreens } from './navigation/screens';

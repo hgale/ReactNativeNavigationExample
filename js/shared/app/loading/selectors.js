@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const getLoading = (state, props) => state.loading;
+const getLoading = state => state.loading;
 
 export const isLoginLoading = createSelector(
   [getLoading],
