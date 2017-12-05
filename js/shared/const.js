@@ -1,5 +1,7 @@
 import { isAndroid } from '../utils';
 
+export const coinAPIBaseURL = 'https://api.coinmarketcap.com';
+
 export const REVERSED_CLIENT_ID =
   '182768211767-jd6ktp7feiu7c9q6mligkhr9gjdnfs8d.apps.googleusercontent.com';
 
