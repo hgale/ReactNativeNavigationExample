@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import RehydrationServices from '../services/RehydrationServices';
 import colorScreen from '../features/color-screen/reducers';
 import counter from '../features/counter/reducer';
-import coins from '../features/coin-screen/reducers';
+import crypto from '../features/coin-screen/reducers';
 import app from '../shared/app/reducers';
 import loading from '../shared/app/loading/reducers';
 import error from '../shared/error/reducers';
@@ -20,7 +20,7 @@ const appReducer = combineReducers({
   user,
   colorScreen,
   counter,
-  coins,
+  crypto,
 });
 
 const reducers = (state, action) =>

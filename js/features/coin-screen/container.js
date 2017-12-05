@@ -6,7 +6,7 @@ import fetchCoins from './actions';
 import Coins from './component';
 
 const mapStateToProps = state => ({
-  coins: state.coins,
+  coins: state.crypto.coins,
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -17,8 +17,10 @@ class CoinScreenContainer extends React.Component {
   componentDidMount() {
     this.props.fetchCoins();
   }
+
   render() {
-    return <Coins />;
+    const { coins } = this.props;
+    return <Coins coins={coins} />;
   }
 }
 

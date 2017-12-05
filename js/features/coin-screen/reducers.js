@@ -12,7 +12,7 @@ const defaultState = {
   coins: [],
 };
 
-const coins = (state = defaultState, action) => {
+const crypto = (state = defaultState, action) => {
   switch (action.type) {
     case REHYDRATE:
       if (action.payload && action.payload.coins) {
@@ -24,7 +24,7 @@ const coins = (state = defaultState, action) => {
       return Object.assign({}, defaultState);
 
     case t.UPDATE_COINS:
-      return Object.assign({}, defaultState, action.coins);
+      return Object.assign({}, defaultState, { coins: action.coins });
 
     case t.REQUEST_COINS:
     default:
@@ -32,4 +32,4 @@ const coins = (state = defaultState, action) => {
   }
 };
 
-export default coins;
+export default crypto;
