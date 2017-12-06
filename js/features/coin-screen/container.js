@@ -2,11 +2,15 @@ import { connect } from 'react-redux';
 import React from 'react';
 
 import fetchCoins from './actions';
+import { areCoinsLoading } from '../../shared/app/loading/selectors';
+import { getCoins } from './selectors';
 
+import LoadingScreen from '../../shared/app/loading/';
 import Coins from './component';
 
 const mapStateToProps = state => ({
-  coins: state.crypto.coins,
+  coins: getCoins(state),
+  loading: areCoinsLoading(state),
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -19,7 +23,10 @@ class CoinScreenContainer extends React.Component {
   }
 
   render() {
-    const { coins } = this.props;
+    const { coins, loading } = this.props;
+    if (loading) {
+      return <LoadingScreen />;
+    }
     return <Coins coins={coins} />;
   }
 }
