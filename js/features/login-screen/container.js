@@ -14,12 +14,12 @@ import LoadingScreen from '../../shared/app/loading/';
 import Login from './component';
 import Profile from './profile';
 
-const mapStateToProps = (state, props) => ({
-  photo: getPhoto(state, props),
-  name: getName(state, props),
-  email: getEmail(state, props),
-  loading: isLoginLoading(state, props),
-  loggedIn: isLoggedIn(state, props),
+const mapStateToProps = state => ({
+  photo: getPhoto(state),
+  name: getName(state),
+  email: getEmail(state),
+  loading: isLoginLoading(state),
+  loggedIn: isLoggedIn(state),
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
