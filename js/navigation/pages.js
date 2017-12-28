@@ -7,6 +7,7 @@ const commonPages = {
   COLORS: 'COLORS',
   LOGIN: 'LOGIN',
   ERROR: 'ERROR',
+  COINS: 'COINS',
 };
 
 const pages = Object.assign({}, commonPages);
