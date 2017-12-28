@@ -6,7 +6,13 @@ import style from './style';
 
 class Entry extends React.Component {
   render() {
-    const { goToCounter, goToTab, goToLogin, name } = this.props;
+    const {
+      goToCounter,
+      goToTab,
+      goToLogin,
+      goToCoinScreen,
+      name,
+    } = this.props;
     return (
       <View style={style.container}>
         <Text>{name}</Text>
@@ -22,6 +28,9 @@ class Entry extends React.Component {
         <TouchableOpacity onPress={goToLogin} style={style.textView}>
           <Text style={style.text}>Go to login screen</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={goToCoinScreen} style={style.textView}>
+          <Text style={style.text}>Go to coin screen</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -32,6 +41,7 @@ Entry.propTypes = {
   goToCounter: PropTypes.func.isRequired,
   goToTab: PropTypes.func.isRequired,
   goToLogin: PropTypes.func.isRequired,
+  goToCoinScreen: PropTypes.func.isRequired,
 };
 
 export default Entry;

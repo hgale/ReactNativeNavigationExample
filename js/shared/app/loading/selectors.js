@@ -7,6 +7,11 @@ export const isLoginLoading = createSelector(
   loading => loading.login
 );
 
+export const areCoinsLoading = createSelector(
+  [getLoading],
+  loading => loading.coins
+);
+
 export const isAnythingLoading = createSelector([getLoading], loading => {
   for (const key in loading) {
     if (key === true) {

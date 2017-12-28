@@ -27,6 +27,10 @@ class EntryContainer extends React.Component {
     this.props.navigator.push(getNavScreen(pages.LOGIN));
   };
 
+  goToCoinScreen = () => {
+    this.props.navigator.push(getNavScreen(pages.COINS));
+  };
+
   render() {
     return (
       <Entry
@@ -34,6 +38,7 @@ class EntryContainer extends React.Component {
         goToCounter={this.goToCounter}
         goToTab={this.goToTabs}
         goToLogin={this.goToLogin}
+        goToCoinScreen={this.goToCoinScreen}
       />
     );
   }

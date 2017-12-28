@@ -15,3 +15,15 @@ export function loginLoaded() {
     type: t.LOGIN_LOADED,
   };
 }
+
+export function coinsLoading() {
+  return {
+    type: t.COINS_LOADING,
+  };
+}
+
+export function coinsLoaded() {
+  return {
+    type: t.COINS_LOADED,
+  };
+}
