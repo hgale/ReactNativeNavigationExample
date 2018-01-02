@@ -89,4 +89,5 @@ function getInitialPage() {
   return getNavScreen(pages.ENTRY);
 }
 
-function processOpenUrl() {}
+function processOpenUrl(url, dispatch) {
+}

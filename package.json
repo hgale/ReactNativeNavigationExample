@@ -37,6 +37,7 @@
 		"eslint-plugin-react": "^7.2.1",
 		"flow-bin": "^0.59.0",
 		"jest": "21.2.1",
+		"react-native-clean-project": "^1.0.6",
 		"react-test-renderer": "16.0.0-beta.5",
 		"reactotron-react-native": "~1.12.2",
 		"reactotron-redux": "~1.12.2"
