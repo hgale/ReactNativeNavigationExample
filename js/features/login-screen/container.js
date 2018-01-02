@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 
+import BaseContainer from '../../shared/base-container';
 import { login, setupGoogleSignin, logout } from '../../shared/user/actions';
 import {
   isLoggedIn,
@@ -30,7 +31,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 });
 
-class LoginContainer extends React.Component {
+class LoginContainer extends BaseContainer {
   componentDidMount() {
     this.props.setupGoogleSignin();
   }

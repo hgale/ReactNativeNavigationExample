@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import BaseContainer from '../../shared/base-container'
 import { initializeApp } from '../../shared/app/actions';
 import { navTypes } from '../../shared/const';
 import pages from '../../navigation/pages';
@@ -14,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   goToTabs: () => dispatch(initializeApp(navTypes.tab)),
 });
 
-class EntryContainer extends React.Component {
+class EntryContainer extends BaseContainer {
   goToCounter = () => {
     this.props.navigator.push(getNavScreen(pages.COUNTER));
   };

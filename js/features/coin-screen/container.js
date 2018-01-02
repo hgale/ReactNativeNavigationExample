@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 
+import BaseContainer from '../../shared/base-container';
 import fetchCoins from './actions';
 import { areCoinsLoading } from '../../shared/app/loading/selectors';
 import { getCoins } from './selectors';
@@ -17,7 +18,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   fetchCoins: () => dispatch(fetchCoins(props.navigator)),
 });
 
-class CoinScreenContainer extends React.Component {
+class CoinScreenContainer extends BaseContainer {
   componentDidMount() {
     this.props.fetchCoins();
   }

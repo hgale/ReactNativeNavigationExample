@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import BaseContainer from '../../shared/base-container';
 import Colors from './component';
 import updateColors from './actions';
 
@@ -11,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   generateRandomColors: () => dispatch(updateColors()),
 });
 
-class ColorContainer extends React.Component {
+class ColorContainer extends BaseContainer {
   render() {
     return <Colors {...this.props} />;
   }

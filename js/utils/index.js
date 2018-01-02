@@ -1,5 +1,7 @@
 import { Platform } from 'react-native';
 
+import pages from '../navigation/pages';
+
 /**
  * Helper method to check if the client is Android
  */
@@ -24,4 +26,11 @@ export function isEmptyVar(input) {
  */
 export function getNavScreen(page) {
   return { screen: page, title: page, backButtonTitle: '' };
+}
+
+/**
+ * Helper method to check if a page exists
+ */
+export function checkPageValid (page) {
+  return Object.keys(pages).some(function (k) { return pages[k] === page })
 }

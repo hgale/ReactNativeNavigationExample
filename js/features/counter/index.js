@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import React from 'react';
 
+import BaseContainer from '../../shared/base-container'
+
 import incrementCounter from './actions';
 import Counter from './component';
 
@@ -12,7 +14,7 @@ const mapDispatchToProps = dispatch => ({
   incrementCounter: () => dispatch(incrementCounter()),
 });
 
-class CounterContainer extends React.Component {
+class CounterContainer extends BaseContainer {
   render() {
     return <Counter {...this.props} />;
   }
