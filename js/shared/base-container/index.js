@@ -14,7 +14,12 @@ export default class BaseContainer extends React.Component {
   onNavigatorEvent(event) {
     // handle a deep link, other events like nav bar can also be handled in here
     if (event.type == 'DeepLink') {
-      this.props.navigator.push(getNavScreen(event.link))
+      let screen = getNavScreen(event.link);
+      if (event.payload) {
+        // Append token if present in payload
+        screen.passProps = { token : event.payload };
+      }
+      this.props.navigator.push(screen);
     }
   }
 }

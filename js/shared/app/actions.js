@@ -91,10 +91,16 @@ function getInitialPage() {
 
 function processOpenUrl(url, dispatch) {
   let tokens = url.split('/');
-  if ( tokens && tokens.length >= 4 && checkPageValid(tokens[3])) {
+  if (tokens && tokens.length >= 4 && checkPageValid(tokens[3])) {
+    let page = tokens[3]
+    let payload = ''
+    if (page === pages.VERIFY) {
+      let token = url.split('=').pop()
+      payload = token
+    }
     Navigation.handleDeepLink({
       link: tokens[3],
-      payload: '' // (optional) Extra payload with deep link
+      payload: payload
     });
   }
 }
