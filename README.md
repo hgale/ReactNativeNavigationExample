@@ -49,6 +49,8 @@ The rules for a feature are as follow:
   - utils.js - a file containing helper functions shared among this features
     components.
 - Feature names should be capitalized since they are components.
+- If a feature is a screen which a user can view or visit this feature should extend the base-container class
+and not React.component. This is done to support deep linking with react-native-navigation.
 
 ## Features In This Example
 
@@ -130,6 +132,30 @@ TODO: Add section explaining Microcomponents, i.e are they dumb or not.
 ### NAVIGATION
 
 This app uses react-native-navigation by Wix, which provides a native navigation experience: https://wix.github.io/react-native-navigation/#/ .
+
+### DEEP LINKING
+
+Currently deep linking is only implemented for iOS. To test this in the iOS simulator
+run the following command:
+
+xcrun simctl openurl booted "https://obnoxious.top/verify/token=abc123"
+xcrun simctl openurl booted "https://obnoxious.top/coins"
+
+This command will simulate opening safari with one of the following web links.
+
+The example url that was purchased for this repo is: https://obnoxious.top/
+
+This url is hosted from an amazon s3 bucket that has been configured with cloudfront to host
+a file which describes all valid routes which can be used with this app: apple-app-site-association
+
+This apple site association file must be hosted on a domain with a valid ssl setup. See the following
+document re how to verify this:
+
+https://medium.com/@sbuckpesch/setup-aws-s3-static-website-hosting-using-ssl-acm-34d41d32e394
+
+Any modifications made to the apple-app-site-association can be verified using the following verification tool:
+
+https://limitless-sierra-4673.herokuapp.com/
 
 ### MADGE
 

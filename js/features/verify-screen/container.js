@@ -3,26 +3,22 @@ import React from 'react';
 
 import BaseContainer from '../../shared/base-container'
 
-import incrementCounter from './actions';
-import Counter from './component';
+import Verify from './component';
 
 const mapStateToProps = state => ({
-  count: state.counter.count,
 });
 
 const mapDispatchToProps = dispatch => ({
-  incrementCounter: () => dispatch(incrementCounter()),
 });
 
-class CounterContainer extends BaseContainer {
+class VerifyContainer extends BaseContainer {
   render() {
-    return <Counter {...this.props} />;
+    return <Verify {...this.props} />;
   }
 }
 
-// Instantiate and make the magic happen
 const reduxContainer = connect(mapStateToProps, mapDispatchToProps)(
-  CounterContainer
+  VerifyContainer
 );
 
 export default reduxContainer;

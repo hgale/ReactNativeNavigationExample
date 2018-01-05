@@ -24,18 +24,13 @@
 
 @implementation AppDelegate
 
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-//  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-//{
-//  return [RCTLinkingManager application:application openURL:url
-//                      sourceApplication:sourceApplication annotation:annotation];
-//}
-
 // add this method before @end
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  
-  return [RNGoogleSignin application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+  BOOL handled = [RNGoogleSignin application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+
+  return handled ||  [RCTLinkingManager application:application openURL:url
+                                  sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity

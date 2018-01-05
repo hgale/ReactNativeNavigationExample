@@ -4,7 +4,7 @@ import { navigatorStyle, navTypes } from '../const';
 
 import t from './actionTypes';
 
-import { getNavScreen } from '../../utils';
+import { getNavScreen, checkPageValid } from '../../utils';
 import pages from '../../navigation/pages';
 
 export function initializeApp(root) {
@@ -89,4 +89,18 @@ function getInitialPage() {
   return getNavScreen(pages.ENTRY);
 }
 
-function processOpenUrl() {}
+function processOpenUrl(url, dispatch) {
+  let tokens = url.split('/');
+  if (tokens && tokens.length >= 4 && checkPageValid(tokens[3])) {
+    let page = tokens[3]
+    let payload = ''
+    if (page === pages.VERIFY) {
+      let token = url.split('=').pop()
+      payload = token
+    }
+    Navigation.handleDeepLink({
+      link: tokens[3],
+      payload: payload
+    });
+  }
+}
