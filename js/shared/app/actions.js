@@ -22,12 +22,14 @@ export function initializeApp(root) {
           {
             label: 'Counter',
             screen: pages.COUNTER,
+            icon: require('../assets/icons8-chart-50.png'),
             title: 'Counter',
             overrideBackPress: false, // this can be turned to true for android
             navigatorStyle: {},
           },
           {
             label: 'Colors',
+            icon: require('../assets/icons8-chart-50.png'),
             screen: pages.COLORS,
             title: 'Colors',
             navigatorStyle: {},
