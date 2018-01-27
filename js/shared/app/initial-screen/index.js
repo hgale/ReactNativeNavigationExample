@@ -4,7 +4,6 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-import PushNotification from 'react-native-push-notification';
 import { getStartScreen } from '../actions';
 import LoadingScreen from '../loading/';
 
@@ -38,13 +37,7 @@ class InitialScreenContainer extends React.Component {
   componentWillMount() {
     initializeAfterRehydration(this.props);
   }
-  componentDidMount() {
-    PushNotification.configure({
-      onNotification: function(notification) {
-        console.log( 'NOTIFICATION:', notification );
-      },
-    });
-  }
+
   render() {
     return <LoadingScreen {...this.props} />;
   }

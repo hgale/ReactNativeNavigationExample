@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import { AppState, Linking, Platform } from 'react-native';
+import { AppState, Linking } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 
 import { navigatorStyle, navTypes } from '../const';
@@ -63,20 +63,9 @@ function setupListeners() {
         console.log( 'NOTIFICATION:', notification );
       },
     });
+
     // This is used to kick off events when the app goes from background to foreground
-    function handleAppStateChange(appState) {
-      if (appState === 'background') {
-        let date = new Date(Date.now() + (5 * 1000));
-
-        // if (Platform.OS === 'ios') {
-        //   date = date.toISOString();
-        // }
-
-        PushNotification.localNotificationSchedule({
-          message: "My Notification Message",
-          date,
-        });
-      }
+    function handleAppStateChange() {
     }
 
     function handleOpenURL(event) {
