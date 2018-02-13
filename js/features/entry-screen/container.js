@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import PushNotification from 'react-native-push-notification';
 import React from 'react';
 import BaseContainer from '../../shared/base-container'
 import { initializeApp } from '../../shared/app/actions';
@@ -32,6 +33,16 @@ class EntryContainer extends BaseContainer {
     this.props.navigator.push(getNavScreen(pages.COINS));
   };
 
+  scheduleLocalNotification = () => {
+    // Schedule notification 5 seconds in the future
+    let date = new Date(Date.now() + (5 * 1000));
+
+    PushNotification.localNotificationSchedule({
+      message: "Scheduled Notification!",
+      date,
+    });
+  };
+
   render() {
     return (
       <Entry
@@ -40,6 +51,7 @@ class EntryContainer extends BaseContainer {
         goToTab={this.goToTabs}
         goToLogin={this.goToLogin}
         goToCoinScreen={this.goToCoinScreen}
+        scheduleLocalNotification= {this.scheduleLocalNotification}
       />
     );
   }

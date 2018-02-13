@@ -1,5 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import { AppState, Linking } from 'react-native';
+import PushNotification from 'react-native-push-notification';
+
 import { navigatorStyle, navTypes } from '../const';
 
 import t from './actionTypes';
@@ -55,9 +57,16 @@ function setupListeners() {
     AppState.addEventListener('change', handleAppStateChange);
     Linking.removeEventListener('url', handleOpenURL);
     Linking.addEventListener('url', handleOpenURL);
+    // Push notification related code
+    PushNotification.configure({
+      onNotification: function(notification) {
+        console.log( 'NOTIFICATION:', notification );
+      },
+    });
 
     // This is used to kick off events when the app goes from background to foreground
-    function handleAppStateChange() {}
+    function handleAppStateChange() {
+    }
 
     function handleOpenURL(event) {
       processOpenUrl(event.url, dispatch);
