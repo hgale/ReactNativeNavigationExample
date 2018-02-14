@@ -12,6 +12,7 @@ class Entry extends React.Component {
       goToLogin,
       goToCoinScreen,
       scheduleLocalNotification,
+      promptNotificationPermission,
       name,
     } = this.props;
     return (
@@ -32,6 +33,9 @@ class Entry extends React.Component {
         <TouchableOpacity onPress={goToCoinScreen} style={style.textView}>
           <Text style={style.text}>Go to coin screen</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={promptNotificationPermission} style={style.textView}>
+          <Text style={style.text}>Prompt for notifications permission (Device)</Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={scheduleLocalNotification} style={style.textView}>
           <Text style={style.text}>Schedule local notification</Text>
         </TouchableOpacity>
@@ -47,6 +51,7 @@ Entry.propTypes = {
   goToLogin: PropTypes.func.isRequired,
   goToCoinScreen: PropTypes.func.isRequired,
   scheduleLocalNotification: PropTypes.func.isRequired,
+  promptNotificationPermission: PropTypes.func.isRequired,
 };
 
 export default Entry;

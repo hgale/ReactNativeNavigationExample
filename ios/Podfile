@@ -5,4 +5,6 @@ target 'RNNExample' do
   # Pods for RNNExample
   pod 'GoogleSignIn'
 
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+
 end
