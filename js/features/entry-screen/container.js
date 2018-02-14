@@ -47,7 +47,7 @@ class EntryContainer extends BaseContainer {
       date,
     });
   };
-  
+
   promptNotificationPermission = () => {
     if (DeviceInfo.isEmulator()) {
       window.alert('This only works on a devie!');
