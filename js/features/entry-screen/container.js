@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import DeviceInfo from 'react-native-device-info';
 import PushNotification from 'react-native-push-notification';
 import React from 'react';
 import BaseContainer from '../../shared/base-container'
@@ -34,6 +35,10 @@ class EntryContainer extends BaseContainer {
   };
 
   scheduleLocalNotification = () => {
+    if (DeviceInfo.isEmulator()) {
+      window.alert('This only works on a devie!');
+      return;
+    }
     // Schedule notification 5 seconds in the future
     let date = new Date(Date.now() + (5 * 1000));
 
@@ -43,6 +48,19 @@ class EntryContainer extends BaseContainer {
     });
   };
 
+  promptNotificationPermission = () => {
+    if (DeviceInfo.isEmulator()) {
+      window.alert('This only works on a devie!');
+      return;
+    }
+    // Push notification related code
+    PushNotification.configure({
+      onNotification: function(notification) {
+        console.log( 'NOTIFICATION:', notification );
+      },
+    });
+  }
+
   render() {
     return (
       <Entry
@@ -51,7 +69,8 @@ class EntryContainer extends BaseContainer {
         goToTab={this.goToTabs}
         goToLogin={this.goToLogin}
         goToCoinScreen={this.goToCoinScreen}
-        scheduleLocalNotification= {this.scheduleLocalNotification}
+        scheduleLocalNotification={this.scheduleLocalNotification}
+        promptNotificationPermission={this.promptNotificationPermission}
       />
     );
   }

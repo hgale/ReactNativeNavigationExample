@@ -1,5 +1,7 @@
 package com.rnnexample;
 
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.reactnativenavigation.NavigationApplication;
 import com.facebook.react.ReactPackage;
@@ -19,7 +21,9 @@ public class MainApplication extends NavigationApplication {
     // Add additional packages you require here
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
-            new RNGoogleSigninPackage()
+            new RNGoogleSigninPackage(),
+            new RNDeviceInfo(),
+            new ReactNativePushNotificationPackage()
     );
   }
 
