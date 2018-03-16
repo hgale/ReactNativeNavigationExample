@@ -8,7 +8,6 @@ export default StyleSheet.create({
     backgroundColor: 'white',
   },
   messages: {
-    // backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
   },

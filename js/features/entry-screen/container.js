@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { Alert, PushNotificationIOS } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
-// import PushNotification from 'react-native-push-notification';
-var PushNotification = require('react-native-push-notification');
+import PushNotification from 'react-native-push-notification';
+
 import React from 'react';
 import BaseContainer from '../../shared/base-container'
 import { initializeApp } from '../../shared/app/actions';
