@@ -11,6 +11,7 @@ class Entry extends React.Component {
       goToTab,
       goToLogin,
       goToCoinScreen,
+      gotToMessagesScreen,
       scheduleLocalNotification,
       promptNotificationPermission,
       name,
@@ -39,6 +40,9 @@ class Entry extends React.Component {
         <TouchableOpacity onPress={scheduleLocalNotification} style={style.textView}>
           <Text style={style.text}>Schedule local notification</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={gotToMessagesScreen} style={style.textView}>
+          <Text style={style.text}>Messages Page</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -52,6 +56,7 @@ Entry.propTypes = {
   goToCoinScreen: PropTypes.func.isRequired,
   scheduleLocalNotification: PropTypes.func.isRequired,
   promptNotificationPermission: PropTypes.func.isRequired,
+  gotToMessagesScreen: PropTypes.func.isRequired,
 };
 
 export default Entry;

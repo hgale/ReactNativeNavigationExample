@@ -7,6 +7,7 @@ import LoginContainer from '../features/login-screen/container';
 import ColorContainer from '../features/color-screen/container';
 import CoinScreenContainer from '../features/coin-screen/container';
 import CounterContainer from '../features/counter';
+import MessagesContainer from '../features/messages/container';
 import pages from '../navigation/pages';
 
 const pageMap = [
@@ -18,6 +19,7 @@ const pageMap = [
   { id: pages.ERROR, component: ErrorContainer },
   { id: pages.COINS, component: CoinScreenContainer },
   { id: pages.VERIFY, component: VerifyContainer },
+  { id: pages.MESSAGES, component: MessagesContainer },
 ];
 
 export default pageMap;
